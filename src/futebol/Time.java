@@ -16,10 +16,21 @@ public class Time {
 		this.empates = 0;
 	}
 	
-	@Override
-	public String toString() {
-		return "Time [nome=" + nome + ", tecnico=" + tecnico.getNome() + ", vitorias=" + vitorias + ", derrotas=" + derrotas
-				+ ", empates=" + empates + ", escalacao=" + jogadoresEscalados.mostrarNomes() + "]";
+	public void detalhes() {
+		System.out.println("Time: " + nome + ", vitorias: " + vitorias + ", derrotas: " + derrotas
+				+ ", empates:" + empates);
+	}
+	
+	public void ganharJogo() {
+		this.vitorias ++;
+	}
+	
+	public void perderJogo() {
+			this.derrotas ++;
+		}
+	
+	public void empatarJogo() {
+		this.empates ++;
 	}
 
 	public String getNome() {
