@@ -12,7 +12,7 @@ public class Treinador extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Treinador [nome="+ super.getNome() + ", idade= " + super.getIdade() + "titulos=" + titulos + ", tempExp=" + tempExp + "]";
+		return "Treinador [nome="+ super.getNome() + ", idade= " + super.getIdade() + ", titulos=" + titulos + ", tempExp=" + tempExp + "]";
 	}
 
 	public int getTitulos() {
