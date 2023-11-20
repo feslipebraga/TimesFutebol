@@ -38,7 +38,7 @@ public class Escalacao {
 	
 	public void mostrarEscalacao(){
 		for (Jogador j : jogadores) {
-			System.out.println("Nome: " + j.getNome() + ", Camisa: " + j.getCamisa() + ", Posicão: " + j.getPosicao());
+			System.out.println(j.getNome() + ", Camisa " + j.getCamisa() + ", " + j.getPosicao());
 		}
 	}
 }

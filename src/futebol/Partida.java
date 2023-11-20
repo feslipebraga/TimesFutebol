@@ -9,15 +9,16 @@ public class Partida {
 	private Time timeA;
 	private Time timeB;
 	
-	public Partida(int rodada, LocalDate data, Time timeA, Time timeB) {
+	public Partida(int rodada, int year, int month, int dayOfMonth, Time timeA, Time timeB) {
 		super();
 		this.rodada = rodada;
-		this.data = data;
+		this.data = LocalDate.of(year, month, dayOfMonth);
 		this.timeA = timeA;
 		this.timeB = timeB;
 	}
 	
 	public void iniciarPartida() {
+		System.out.println("------------------------");
 		System.out.println("ROUND " + this.rodada);
 		System.out.println(this.timeA.getNome() + " vs " + this.timeB.getNome());
 		
@@ -41,6 +42,23 @@ public class Partida {
 			this.timeB.ganharJogo();
 		}
 	}
+	
+	public void mostrarDetalhesPartida() {
+		/*	A data da partida de futebol
+		O nome do treinador
+		Os jogadores escalados para essa data */
+		System.out.println("---------------------------------------------");
+        System.out.println("Data da Partida: " + this.data);
+        System.out.println("Treinador do " + timeA.getNome() + ": " + timeA.getTecnico().getNome());
+        System.out.println("Jogadores escalados para o time:");
+        timeA.getJogadoresEscalados().mostrarEscalacao();
+
+        System.out.println("\nTreinador do " + timeB.getNome() + ": " + timeB.getTecnico().getNome());
+        System.out.println("Jogadores escalados para o time:");
+        timeB.getJogadoresEscalados().mostrarEscalacao();
+        
+        System.out.println();
+    }
 	
 	@Override
 	public String toString() {
