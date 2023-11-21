@@ -63,7 +63,7 @@ public class Jogo {
 		Time timeFlamengo = new Time("Flamengo", flamengo0, escalacaoFlamengo);
 		
 		// GREMIO
-		Treinador gremio0 = new Treinador("Tite", 25, 5, 12);
+		Treinador gremio0 = new Treinador("Junior", 30, 3, 5);
 		Jogador gremio1 = new Jogador("Antoine Griezmann", 30, 7, "Atacante", 0);
 		Jogador gremio2 = new Jogador("Harry Kane", 28, 10, "Atacante", 0);
 		Jogador gremio3 = new Jogador("Marco Verratti", 29, 6, "Meio-Campista", 0);
@@ -92,7 +92,7 @@ public class Jogo {
 		Time timeGremio = new Time("Gremio", gremio0, escalacaoGremio);
 		
 		// INTER
-		Treinador inter0 = new Treinador("Ronaldo", 30, 1, 3);
+		Treinador inter0 = new Treinador("Emerson", 42, 4, 15);
 		Jogador inter1 = new Jogador("Raheem Sterling", 27, 7, "Atacante", 0);
 		Jogador inter2 = new Jogador("Aymeric Laporte", 27, 14, "Defensor", 0);
 		Jogador inter3 = new Jogador("Kalvin Phillips", 26, 23, "Meio-Campista", 0);
@@ -126,24 +126,35 @@ public class Jogo {
 		times.add(timeFlamengo);
 		times.add(timeGremio);
 		times.add(timeInter);
-		Campeonato campeonato = new Campeonato("Brasileirão Série A", 2, times);
+		Campeonato campeonato = new Campeonato("Brasileirão Série A", 3, times);
 		
+		campeonato.apresentar();
+
 		// PARTIDA
 		Partida partida1 = new Partida(1, 2023, 11, 20, timeVasco, timeFlamengo);
 		partida1.mostrarDetalhesPartida();
 		
 		Partida partida2 = new Partida(2, 2023, 11, 22, timeGremio, timeInter);
 		partida2.mostrarDetalhesPartida();
+
+		Partida partida3 = new Partida(3, 2023, 11, 24, timeFlamengo, timeInter);
+		partida3.mostrarDetalhesPartida();
 						
 		// GAMEEEEEEEEEE
-		campeonato.apresentar();
-		
-		partida1.iniciarPartida();		
+
+		partida1.iniciarPartida(2, 3);		
 		timeVasco.detalhes();
 		timeFlamengo.detalhes();
 		
-		partida2.iniciarPartida();			
+		partida2.iniciarPartida(4, 5);			
 		timeGremio.detalhes();
 		timeInter.detalhes();
+
+		partida3.iniciarPartida(2, 0);
+		timeFlamengo.detalhes();
+		timeInter.detalhes();
+
+		// FINALIZAÇÃO
+		campeonato.mostrarVencedor(timeFlamengo);
 	}
 }

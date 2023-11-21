@@ -36,6 +36,11 @@ public class Campeonato {
 		System.out.println();
 	}
 
+	public void mostrarVencedor(Time time){
+		System.out.println("------------------------");
+		System.out.println("E O VENCEDOR DO CAMPEONATO É O " + time.getNome());
+	}
+
 	@Override
 	public String toString() {
 		return "Campeonato [nome=" + nome + ", rodadas=" + rodadas + ", times=" + tabelaTimes() + "]";

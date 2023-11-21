@@ -1,13 +1,11 @@
 package futebol;
 
 import java.time.LocalDate;
-import java.util.Random;
 
 public class Partida {
 	private int rodada;
 	private LocalDate data;
-	private Time timeA;
-	private Time timeB;
+	private Time timeA, timeB; 
 	
 	public Partida(int rodada, int year, int month, int dayOfMonth, Time timeA, Time timeB) {
 		super();
@@ -17,14 +15,10 @@ public class Partida {
 		this.timeB = timeB;
 	}
 	
-	public void iniciarPartida() {
+	public void iniciarPartida(int golsA, int golsB) {
 		System.out.println("------------------------");
 		System.out.println("ROUND " + this.rodada);
 		System.out.println(this.timeA.getNome() + " vs " + this.timeB.getNome());
-		
-		Random numero = new Random();
-		int golsA = numero.nextInt(6);
-		int golsB = numero.nextInt(6);
 		
 		System.out.println("RESULTADO DO JOGO: " + golsA + " x " + golsB);
 		
@@ -49,6 +43,7 @@ public class Partida {
 		Os jogadores escalados para essa data */
 		System.out.println("---------------------------------------------");
         System.out.println("Data da Partida: " + this.data);
+		System.out.println(timeA.getNome() + " vs " + timeB.getNome());
         System.out.println("Treinador do " + timeA.getNome() + ": " + timeA.getTecnico().getNome());
         System.out.println("Jogadores escalados para o time:");
         timeA.getJogadoresEscalados().mostrarEscalacao();
